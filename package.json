@@ -1,0 +1,24 @@
+{
+  "name": "fork-to-star-all-my-repos",
+  "version": "1.0.0",
+  "description": "🤩",
+  "main": "index.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "star": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SyMind/fork-to-star-all-my-repos.git"
+  },
+  "author": "SyMind",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/SyMind/fork-to-star-all-my-repos/issues"
+  },
+  "homepage": "https://github.com/SyMind/fork-to-star-all-my-repos#readme",
+  "dependencies": {
+    "octokit": "^2.0.7"
+  }
+}
