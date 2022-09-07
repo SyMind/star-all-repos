@@ -20,8 +20,10 @@ const octokit = new Octokit({
     auth: access_token
 })
 
+console.log('Repository owner: ', process.env.REPO_OWNER)
+
 const repos = await octokit.request('GET /users/{username}/repos', {
-    username: 'SyMind',
+    username: process.env.REPO_OWNER,
     per_page: 100
 })
 
