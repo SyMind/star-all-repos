@@ -21,7 +21,8 @@ const octokit = new Octokit({
 })
 
 const repos = await octokit.request('GET /users/{username}/repos', {
-    username: 'SyMind'
+    username: 'SyMind',
+    per_page: 100
 })
 
 if (repos.status !== 200) {
@@ -31,8 +32,7 @@ if (repos.status !== 200) {
 for (const repo of repos.data) {
     octokit.request('PUT /user/starred/{owner}/{repo}', {
         owner: repo.owner.login,
-        repo: repo.name,
-        per_page: 100,
+        repo: repo.name
     }).then(() => {
         console.log('⭐️ ' + repo.name)
     })
