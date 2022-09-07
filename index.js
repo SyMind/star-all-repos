@@ -31,7 +31,8 @@ if (repos.status !== 200) {
 for (const repo of repos.data) {
     octokit.request('PUT /user/starred/{owner}/{repo}', {
         owner: repo.owner.login,
-        repo: repo.name
+        repo: repo.name,
+        per_page: 100,
     }).then(() => {
         console.log('⭐️ ' + repo.name)
     })
