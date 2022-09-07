@@ -8,14 +8,23 @@ on:
 
 jobs:
   continuous-delivery:
-
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout 🛎️
         uses: actions/checkout@v3
 
+      - name: Install 🚚
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16.x'
+      - run: npm install
+
+      - name: Build 🔧
+        run: npm run build
+        env:
+          REPO_OWNER: ${{github.repository_owner}}
+
       - name: Deploy 🚀
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: website
+          folder: output

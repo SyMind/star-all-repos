@@ -6,6 +6,7 @@
   "private": true,
   "type": "module",
   "scripts": {
+    "build": "node scripts/build.js",
     "star": "node index.js"
   },
   "repository": {

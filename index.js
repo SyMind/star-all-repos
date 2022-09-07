@@ -9,7 +9,7 @@ const response = await fetch('https://github.com/login/oauth/access_token', {
         'Content-Type': 'application/json'
     },
     body: JSON.stringify({
-        client_id: 'e9547e631cc7b7bb1d6f',
+        client_id: process.env.CLIENT_ID,
         client_secret: process.env.CLIENT_SECRET,
         code: process.env.AUTH_CODE
     })

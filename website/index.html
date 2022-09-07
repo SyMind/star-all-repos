@@ -9,7 +9,7 @@
     <script>
         var urlObj = new URL(location.href)
         var code = urlObj.searchParams.get('code') || ''
-        location.href = 'https://github.com/SyMind/star-all-repos/issues/new?assignees=&labels=&template=star.md&title=' + code
+        location.href = GITHUB_NEW_ISSUE_PAGE + code
     </script>
 </body>
 </html>
