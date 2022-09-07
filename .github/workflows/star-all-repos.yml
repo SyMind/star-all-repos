@@ -1,11 +1,11 @@
 name: Star all repos
 on:
-  push:
-    branches:
-      - main
+  issues:
+    types: [opened]
 jobs:
   star:
     runs-on: ubuntu-latest
+    environment: star-all-repos
     steps:
     - uses: actions/checkout@v3
     - uses: actions/setup-node@v3
@@ -14,4 +14,5 @@ jobs:
     - run: npm install
     - run: npm run star
       env:
-        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        CLIENT_SECRET: ${{secrets.CLIENT_SECRET}}
+        AUTH_CODE: ${{github.event.issue.title}}

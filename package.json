@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/SyMind/fork-to-star-all-my-repos#readme",
   "dependencies": {
+    "node-fetch": "^3.2.10",
     "octokit": "^2.0.7"
   }
 }
