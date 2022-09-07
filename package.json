@@ -1,5 +1,5 @@
 {
-  "name": "fork-to-star-all-my-repos",
+  "name": "star-all-repos",
   "version": "1.0.0",
   "description": "🤩",
   "main": "index.js",
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SyMind/fork-to-star-all-my-repos.git"
+    "url": "git+https://github.com/SyMind/star-all-repos.git"
   },
   "author": "SyMind",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/SyMind/fork-to-star-all-my-repos/issues"
+    "url": "https://github.com/SyMind/star-all-repos/issues"
   },
-  "homepage": "https://github.com/SyMind/fork-to-star-all-my-repos#readme",
+  "homepage": "https://github.com/SyMind/star-all-repos#readme",
   "dependencies": {
     "node-fetch": "^3.2.10",
     "octokit": "^2.0.7"
