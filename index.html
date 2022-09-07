@@ -8,7 +8,7 @@
 <body>
     <script>
         var urlObj = new URL(location.href)
-        var code = urlObj.searchParams.get('code')
+        var code = urlObj.searchParams.get('code') || ''
         location.href = 'https://github.com/SyMind/fork-to-star-all-my-repos/issues/new?assignees=&labels=&template=star.md&title=' + code
     </script>
 </body>
