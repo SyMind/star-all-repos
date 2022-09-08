@@ -42,6 +42,10 @@
 * CLIENT_ID，值为 OAuth Apps 的 Client ID
 * CLIENT_SECRET，值为在 OAuth Apps 中生成的 Client secrets
 
+## 4. 修改本 README.md
+
+搜索 https://symind.github.io/star-all-repos ，将其改为你的链接。
+
 # License
 
 [MIT](https://github.com/SyMind/star-all-repos/blob/main/LICENSE)
