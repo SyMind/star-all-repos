@@ -14,7 +14,9 @@ jobs:
     - run: npm install
     - run: npm run star
       env:
+        GITHUB_TOKEN: ${{secrets.GITHUB_TOKEN}}
         REPO_OWNER: ${{github.repository_owner}}
         CLIENT_ID: ${{secrets.CLIENT_ID}}
         CLIENT_SECRET: ${{secrets.CLIENT_SECRET}}
         AUTH_CODE: ${{github.event.issue.title}}
+        ISSUE_NUMBER: ${{github.event.issue.number}}
