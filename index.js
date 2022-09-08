@@ -1,13 +1,26 @@
 import fetch from 'node-fetch'
 import { Octokit } from 'octokit'
 
-console.log('Repository owner: ', process.env.REPO_OWNER)
+function getCustomUserName() {
+    const result = /username=([a-z\d](?:[a-z\d]|-(?=[a-z\d])){0,38})/.exec(process.env.ISSUE_BODY)
+    if (!result) {
+        return null
+    }
+    return result[1]
+}
+
+const customUserName = getCustomUserName()
+const username = customUserName || process.env.REPO_OWNER
+
+console.log('Target user name: ', username)
 
 const ownerOctokit = new Octokit({
     auth: process.env.GITHUB_TOKEN
 })
 
-const comment = `<p align="center"><b>感谢你来 Star 我的项目！❤️ </b></p>
+const text = username === process.env.REPO_OWNER ? '感谢你来 Star 我的项目！❤️ ' : `感谢你使用该工具 ❤️，你将 Star ${username} 的全部项目！`
+
+const comment = `<p align="center"><b>${text}</b></p>
 <p align="center"> 
   <kbd>
     <img src="https://github.com/SyMind/star-all-repos/blob/main/images/ikun.gif?raw=true">
@@ -41,7 +54,7 @@ const userOctokit = new Octokit({
 })
 
 const repos = await userOctokit.request('GET /users/{username}/repos', {
-    username: process.env.REPO_OWNER,
+    username,
     per_page: 100
 })
 
